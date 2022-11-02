@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../../styles/Details.module.css";
 
-const Product = () => {
+const Product = ({ product }) => {
   return (
     <div className={styles.container}>
       <div className={styles.productContainer}>
@@ -19,12 +20,7 @@ const Product = () => {
             <p className={styles.productPrice}>$ {product.price} </p>
           </div>
           <div className={styles.imageContainer}>
-            <Image
-              width={250}
-              height={100}
-              src={product.image}
-              alt="Picture of product"
-            />
+            <img src={product.image} alt="Picture of product" />
           </div>
         </div>
         <div className={styles.footer}>
@@ -35,3 +31,26 @@ const Product = () => {
   );
 };
 export default Product;
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { id: "0" } },
+      { params: { id: "1" } },
+      { params: { id: "2" } },
+      { params: { id: "3" } },
+    ],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(context) {
+  const { params } = context;
+  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
+  const product = await res.json();
+  if (!product) return { notFound: true };
+  return {
+    props: { product },
+    revalidate: 10,
+  };
+}
