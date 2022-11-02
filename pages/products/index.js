@@ -2,7 +2,7 @@ import Products from "../../components/Products";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,4 +17,16 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const res = await fetch("https://fakestoreapi.com/products");
+  const products = await res.json();
+
+  if (!products) return { notFound: true };
+  return {
+    props: {
+      products,
+    },
+  };
 }
