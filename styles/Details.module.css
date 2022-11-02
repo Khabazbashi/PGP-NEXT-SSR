@@ -1,0 +1,212 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://img.freepik.com/premium-photo/watercolor-soft-pink-abstract-background_3590-98.jpg?w=2000");
+}
+
+.productContainer {
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.productHeader {
+    display: flex;
+    justify-content: flex-end;
+    margin:auto;
+    width: 100%;
+    padding: 1em;
+}
+
+.exitIcon {
+    height: 2em;
+}
+
+.productContent {
+    display:flex;
+    flex-direction: column;
+    width: 90%;
+    height: 50%;
+    align-items: center;
+    align-content: center;
+    justify-content: center; 
+    margin: auto;
+    flex-grow: 1;
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5% 5%;
+    height: 100%;
+}
+
+.imageContainer {
+    display: flex;
+    width: 100%;
+}
+
+.image {
+    width:100%;
+    height:100%;
+    margin: auto;
+    object-fit: contain;
+}
+
+.productCategory {
+    text-transform: uppercase;
+    color:#b6ada3;
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+
+.productTitle {
+    font-size: 40px;
+    color: #3a6e7e;
+    font-weight: 600;
+    margin-top:0;
+    margin-bottom: 20px;
+}
+
+.productDescription {
+    line-height: 110%;
+    letter-spacing: 2px;
+    font-weight: 200;
+    font-size: 25px;
+    margin-bottom: 3em;
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3rem 0;
+    padding-left: 9%;
+}
+
+.productPrice {
+    display: flex;
+    letter-spacing: 2px;
+    padding-top: 2em;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.addButton {
+    padding: 1em;
+    background-color: white;
+    border: 2px #272720 solid;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) { 
+
+    .productContent {
+        height: 60em;
+        width: 100%;
+    }
+
+    .imageContainer {
+        height: 50%;
+    }
+
+    .image {
+        height: 90%;    
+    }
+
+    .footer {
+        padding-left: 2rem;
+    }
+
+}
+
+@media (min-width: 1024px) { 
+
+    .container {
+        width: 100%;
+    }
+
+    .productContainer {
+        margin: 1rem;
+    }
+}
+
+@media (min-width: 1280px) {  
+
+    .header {
+       height: 10%;
+    }
+
+    .productContainer {
+        max-width: 100em;
+        width: 60%;
+        height: 40em;
+        margin: auto;
+    }
+
+    .productContent {
+        height: 60%;
+        flex-direction: row;
+        flex-grow: 1;
+    }
+
+    .productDetails {
+        width:50%;
+        font-size: 14px;
+    }
+
+    .productDescription {
+        font-size: 20px;
+    }
+
+    .imageContainer {
+        width: 50%;
+        padding:0 ;
+        height: 90%;
+    }
+
+    .image {
+        height: 90%;
+        width: 90%;
+    }
+
+    .footer {
+        flex-grow: 1;
+        margin-top:0;
+    }
+
+    .productPrice {
+        padding-top: 1rem;
+    }
+
+    .addButton {
+        padding: 0.7em;
+    }
+ 
+    .productTitle {
+        font-size: 25px;
+        color: #3a6e7e;
+        font-weight: 600;
+        margin-top:0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1536px) {  
+    .productContainer {
+        max-width: 80em;
+        width: 60%;
+        height: 50em;
+        margin: auto;
+    }
+
+}
