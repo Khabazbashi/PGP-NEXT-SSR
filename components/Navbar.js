@@ -1,8 +1,7 @@
-import Search from "./Search";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 
-export default function Navbar({ searchFunc }) {
+export default function Navbar() {
   return (
     <div className={styles.container}>
       <Link href="/products">
@@ -10,7 +9,6 @@ export default function Navbar({ searchFunc }) {
           <span className={styles.titleSpan}>Fake</span>Store
         </p>
       </Link>
-      <Search searchFunc={searchFunc} />
     </div>
   );
 }
