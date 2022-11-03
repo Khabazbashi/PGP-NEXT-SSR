@@ -8,9 +8,29 @@ import styles from "../../styles/Home.module.css";
 export default function Home({ productsData, categoriesData }) {
   const [products, setProducts] = useState(productsData);
   const [filters, setFilters] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    if (filters.length !== 0) {
+    if (filters.length !== 0 && searchInput !== "") {
+      let productsByCategory = productsData.filter((x) =>
+        filters.includes(x.category)
+      );
+      let searchProducts = productsByCategory.filter(
+        (i) =>
+          i.title.includes(searchInput) ||
+          i.category.includes(searchInput) ||
+          i.description.includes(searchInput)
+      );
+      setProducts(searchProducts);
+    } else if (filters.length === 0 && searchInput !== "") {
+      let searchProducts = productsData.filter(
+        (i) =>
+          i.title.includes(searchInput) ||
+          i.category.includes(searchInput) ||
+          i.description.includes(searchInput)
+      );
+      setProducts(searchProducts);
+    } else if (filters.length !== 0 && searchInput === "") {
       let productsByCategory = productsData.filter((x) =>
         filters.includes(x.category)
       );
@@ -18,7 +38,7 @@ export default function Home({ productsData, categoriesData }) {
     } else {
       return setProducts(productsData);
     }
-  }, [filters]);
+  }, [filters, searchInput]);
 
   function filterFunc(category) {
     if (filters.includes(category)) {
@@ -26,6 +46,10 @@ export default function Home({ productsData, categoriesData }) {
     } else {
       setFilters((prev) => [...prev, category]);
     }
+  }
+
+  function searchFunc(input) {
+    setSearchInput(input);
   }
 
   return (
@@ -36,7 +60,7 @@ export default function Home({ productsData, categoriesData }) {
       </Head>
 
       <main className={styles.main}>
-        <Navbar />
+        <Navbar searchFunc={searchFunc} />
         <div className={styles.campaign}></div>
         <Categories categories={categoriesData} filterFunc={filterFunc} />
         <Products products={products} />

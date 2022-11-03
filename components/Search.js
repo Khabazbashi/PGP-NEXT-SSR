@@ -1,32 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/Search.module.css";
 
-const Search = ({ search }) => {
+const Search = ({ searchFunc }) => {
   const [input, setInput] = useState("");
-  const [isFormActive, setIsFormActive] = useState(false);
+
+  useEffect(() => {
+    searchFunc(input);
+  }, [input]);
 
   const handleChange = (e) => {
-    if (isFormActive) {
-      setInput(e.target.value);
-      search(input);
-    }
+    setInput(e.target.value);
   };
 
   const handleClick = () => {
     setInput("");
-    search("");
+    searchFunc("");
   };
 
   return (
     <div className={styles.container}>
       <input
         placeholder="What do you want to shop?"
-        onFocus={() => setIsFormActive(true)}
-        onBlur={() => setIsFormActive(false)}
         className={styles.input}
         type="text"
         value={input}
-        onChange={(e) => handleChange(e)}
+        onInput={(e) => handleChange(e)}
       ></input>
       {input === "" && (
         <img
