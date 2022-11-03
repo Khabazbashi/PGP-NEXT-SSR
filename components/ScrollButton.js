@@ -1,29 +1,29 @@
-import styles from "../styles/Scrollbutton.module.css";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import styles from "../styles/ScrollButton.module.css";
 
 const ScrollButton = () => {
-  const router = useRouter();
-  const [scrollButton, setScrollButton] = useState();
+  const [button, setButton] = useState();
 
   useEffect(() => {
-    if (!router.isReady) return;
-    let button = document.getElementById("sbtn");
-    setScrollButton(button);
+    if (typeof document !== "undefined") {
+      setButton(document.getElementById("scrollBtn"));
+    }
   }, []);
 
-  window.onscroll = function () {
-    scrollFunction();
-  };
+  if (typeof window !== "undefined") {
+    window.onscroll = function () {
+      scrollFunction();
+    };
+  }
 
   function scrollFunction() {
     if (
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
     ) {
-      scrollButton.style.display = "block";
+      button.style.display = "block";
     } else {
-      scrollButton.style.display = "none";
+      button.style.display = "none";
     }
   }
 
@@ -35,7 +35,7 @@ const ScrollButton = () => {
   return (
     <div>
       <button
-        id="sbtn"
+        id="scrollBtn"
         className={styles.scrollBtn}
         onClick={() => topFunction()}
       >
