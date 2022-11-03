@@ -1,0 +1,22 @@
+.category {
+    text-transform: uppercase;
+    background-color: white;
+    border: 1px solid #c97f3e;
+    margin: 5px;
+    padding: 1em;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    color: black;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) { 
+
+    .category {
+      margin: 5px 15px;
+    }
+    
+  }
+
+  
+
+

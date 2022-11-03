@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1024px) { 
+
+  .container {
+    justify-content: flex-end;
+  }
+
+}
+
+ @media (min-width: 1536px) { 
+
+  .container {
+    padding: 0 2rem;
+    max-width: 80%;
+  }
+
+}
