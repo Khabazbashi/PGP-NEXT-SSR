@@ -1,40 +1,22 @@
-.container {
+.productContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("https://img.freepik.com/premium-photo/watercolor-soft-pink-abstract-background_3590-98.jpg?w=2000");
-}
-
-.productContainer {
-    display:flex;
-    flex-direction: column;
-    margin: auto;
-    background-color: white;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 2rem;
+    background-color: #f2f2fd;
 }
 
 .productHeader {
     display: flex;
     justify-content: flex-end;
-    margin:auto;
-    width: 100%;
-    padding: 1em;
 }
 
 .exitIcon {
-    height: 2em;
+    height: 2rem;
 }
 
 .productContent {
-    display:flex;
-    flex-direction: column;
-    width: 90%;
-    height: 50%;
-    align-items: center;
-    align-content: center;
-    justify-content: center; 
+    display: flex;
+    flex-direction: column-reverse;
     margin: auto;
     flex-grow: 1;
 }
@@ -42,44 +24,34 @@
 .productDetails {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 5% 5%;
-    height: 100%;
 }
 
 .imageContainer {
-    display: flex;
-    width: 100%;
-}
-
-.image {
-    width:100%;
-    height:100%;
+    display: block;
+    position: relative;
     margin: auto;
-    object-fit: contain;
+
 }
 
 .productCategory {
     text-transform: uppercase;
     color:#b6ada3;
     letter-spacing: 2px;
-    font-size: 1em;
+    font-size: 15px;
 }
 
 .productTitle {
-    font-size: 40px;
+    font-size: 25px;
     color: #3a6e7e;
     font-weight: 600;
-    margin-top:0;
-    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .productDescription {
     line-height: 110%;
     letter-spacing: 2px;
     font-weight: 200;
-    font-size: 25px;
-    margin-bottom: 3em;
+    font-size: 20px;
     margin: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -88,43 +60,56 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 3rem 0;
-    padding-left: 9%;
 }
 
 .productPrice {
     display: flex;
     letter-spacing: 2px;
     padding-top: 2em;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
 
 .addButton {
-    padding: 1em;
+    padding: 15px 10px;
     background-color: white;
-    border: 2px #272720 solid;
+    border: 1px #272720 solid;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 @media (min-width: 768px) { 
 
-    .productContent {
-        height: 60em;
-        width: 100%;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(237,237,247,255);
+        padding: 3rem;
     }
 
-    .imageContainer {
-        height: 50%;
+    .productContainer {
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     }
 
-    .image {
-        height: 90%;    
+    .productCategory {
+        font-size: 16px;
     }
 
-    .footer {
-        padding-left: 2rem;
+    .productTitle {
+        font-size: 21px;
+    }
+
+    .productDescription {
+        font-size: 18px;
+    }
+
+    .productPrice {
+        font-size: 16px;
+    }
+
+    .exitIcon {
+        height: 1.6rem;
     }
 
 }
@@ -160,28 +145,23 @@
     }
 
     .productDetails {
-        width:50%;
+        width: 50%;
         font-size: 14px;
     }
 
     .productDescription {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .imageContainer {
         width: 50%;
-        padding:0 ;
-        height: 90%;
-    }
-
-    .image {
-        height: 90%;
-        width: 90%;
+        display: flex;
+        justify-content: center;
     }
 
     .footer {
         flex-grow: 1;
-        margin-top:0;
+        margin-top: 0;
     }
 
     .productPrice {
@@ -193,20 +173,27 @@
     }
  
     .productTitle {
-        font-size: 25px;
-        color: #3a6e7e;
-        font-weight: 600;
-        margin-top:0;
-        margin-bottom: 20px;
+        font-size: 20px;
     }
 }
 
 @media (min-width: 1536px) {  
+
     .productContainer {
-        max-width: 80em;
-        width: 60%;
-        height: 50em;
-        margin: auto;
+        max-width: 70%;
+    }
+
+    .productContent {
+        padding: 1rem 2rem;
+    }
+
+    .footer {
+        padding: 0 2rem;
+    }
+
+    .imageContainer {
+        display:flex;
+        justify-content: center;
     }
 
 }

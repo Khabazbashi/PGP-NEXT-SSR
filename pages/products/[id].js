@@ -8,7 +8,7 @@ const Product = ({ product }) => {
       <div className={styles.productContainer}>
         <div className={styles.productHeader}>
           <Link href="/products">
-            <img src="/exit.png" alt="ExitIcon" />
+            <img className={styles.exitIcon} src="/exit.png" alt="ExitIcon" />
           </Link>
         </div>
 
@@ -20,7 +20,13 @@ const Product = ({ product }) => {
             <p className={styles.productPrice}>$ {product.price} </p>
           </div>
           <div className={styles.imageContainer}>
-            <img src={product.image} alt="Picture of product" />
+            <Image
+              objectFit="contain"
+              width={400}
+              height={400}
+              src={product.image}
+              alt="Picture of product"
+            />
           </div>
         </div>
         <div className={styles.footer}>

@@ -7,13 +7,16 @@ export default function Product({ product }) {
     <Link href={`/products/${product.id}`}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <img className={styles.image} src={product.image} />
+          <Image
+            objectFit="contain"
+            width={300}
+            height={250}
+            src={product.image}
+          />
         </div>
-        <div className={styles.contentContainer}>
-          <a className={styles.productTitle}>{product.title}</a>
-          <a className={styles.productCategory}> {product.category}</a>
-          <a className={styles.productPrice}>$ {product.price}</a>
-        </div>
+        <p className={styles.productTitle}>{product.title}</p>
+        <p className={styles.productCategory}> {product.category}</p>
+        <p className={styles.productPrice}>$ {product.price}</p>
       </div>
     </Link>
   );

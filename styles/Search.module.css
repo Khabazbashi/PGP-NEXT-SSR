@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.input {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 0.8rem 3rem;
+    border-radius: 40px;
+    background: rgba(237,237,247,255);
+
+}
+
+.exitIcon {
+    position: absolute;
+    top: 9.3rem;
+    right: 2rem;
+    width: 25px;
+    height: 25px;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 8.9rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+}
+
+@media (min-width: 768px) { 
+
+    .input {
+        width: 60%;
+    }
+
+    .exitIcon {
+        right: 22%;
+    }
+    
+    .searchIcon {
+        right: 22%;
+    }
+
+}
+
+@media (min-width: 1024px) {  
+
+    .input {
+        width: 40%;
+    }
+
+    .exitIcon {
+        right: 32%;
+    }
+    
+    .searchIcon {
+        right: 31%;
+    }
+
+}
+
+@media (min-width: 1280px) {  
+
+    .container {
+        flex-grow: 1;
+        justify-content: flex-end;
+        padding: 0;
+    }
+
+    .input {
+        display: inline-block;
+        text-align: end;
+        font-size: 17px;
+        padding: 1rem 4rem;
+        border-radius: 40px;
+        width: 21.5rem;
+        transition: width 0.5s ease-in-out;
+        transition-delay: 3s;
+    }
+
+    .input:focus {
+        width: 50%;
+    }
+
+    .exitIcon {
+        top: 3.2rem;
+        right: 3rem;
+    }
+    
+    .searchIcon {
+        top: 2.7rem;
+        right: 2.5rem;
+    }
+
+}
+

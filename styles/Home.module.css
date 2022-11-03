@@ -1,6 +1,5 @@
 .container {
   height: 100%;
-  width: 100%;
 }
 
 .main {
@@ -12,20 +11,37 @@
 
 .campaign {
   width: 100%;
-  height: 50vh;
-  background-image: url("https://media.istockphoto.com/vectors/shopaholics-on-black-friday-flat-color-vector-illustration-vector-id1281622046?k=20&m=1281622046&s=612x612&w=0&h=T70T3sJW6fsGS_EAI9yWUNV4H_Zb7ugrXrED0aqjmaw=");
+  height: 40vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://img.freepik.com/free-vector/people-with-shopping-cart-bags-run-store_107791-13919.jpg?w=2000&t=st=1667418150~exp=1667418750~hmac=b5ffc014f8acc814ea4f906df47f43fb33a5885ea4328460ffaf5ad9a60e1891");
 }
+
+
+@media (min-width: 768px) { 
+
+    .campaign {
+      height: 30vh;
+  }
+  
+}
+
+@media (min-width: 1024px) { 
+  
+    .campaign {
+      height: 50vh;
+    }
+
+ }
 
 @media (min-width: 1280px) {  
 
-  .main {
-    width: 100%;
-    margin:auto;
+  .campaign {
+    background-size: contain;
+    background-position: center;
   }
 
-  .campaign {
-    height: 50vh;
-    background-repeat: repeat;
-    background-size: contain;
-  }
 }
+
+
+
