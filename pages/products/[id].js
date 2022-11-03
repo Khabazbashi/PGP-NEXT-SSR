@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import Navbar from "../../components/Navbar";
 import styles from "../../styles/Details.module.css";
 
 const Product = ({ product }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.detailsContainer}>
+      <Navbar />
       <div className={styles.productContainer}>
         <div className={styles.productHeader}>
           <Link href="/products">
