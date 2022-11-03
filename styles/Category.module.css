@@ -7,6 +7,8 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     color: black;
     text-align: center;
+    cursor: pointer;
+
   }
 
   @media (min-width: 768px) { 

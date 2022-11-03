@@ -1,8 +1,9 @@
 .container {
+    position: absolute;
+    top: 7.5rem;
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding-bottom: 1rem;
+    width: 90%;
 }
 
 .input {
@@ -18,16 +19,16 @@
 
 .exitIcon {
     position: absolute;
-    top: 9.3rem;
-    right: 2rem;
+    top: 14px;
+    right: 14px;
     width: 25px;
     height: 25px;
 }
 
 .searchIcon {
     position: absolute;
-    top: 8.9rem;
-    right: 1.5rem;
+    top: 7px;
+    right: 10px;
     width: 40px;
     height: 40px;
 }
@@ -67,6 +68,8 @@
 @media (min-width: 1280px) {  
 
     .container {
+        top: 2rem;
+        right: 2rem;
         flex-grow: 1;
         justify-content: flex-end;
         padding: 0;
@@ -82,13 +85,13 @@
     }
     
     .exitIcon {
-        top: 3.2rem;
-        right: 3rem;
+        top: 16px;
+        right: 13px;
     }
     
     .searchIcon {
-        top: 2.7rem;
-        right: 2.5rem;
+        top: 9px;
+        right: 10px;
     }
 
 }
