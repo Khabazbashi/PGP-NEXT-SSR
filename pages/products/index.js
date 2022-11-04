@@ -19,17 +19,17 @@ export default function Home({ productsData, categoriesData }) {
       );
       let searchProducts = productsByCategory.filter(
         (i) =>
-          i.title.includes(searchInput) ||
-          i.category.includes(searchInput) ||
-          i.description.includes(searchInput)
+          i.title.toLowerCase().includes(searchInput) ||
+          i.category.toLowerCase().includes(searchInput) ||
+          i.description.toLowerCase().includes(searchInput)
       );
       setProducts(searchProducts);
     } else if (filters.length === 0 && searchInput !== "") {
       let searchProducts = productsData.filter(
         (i) =>
-          i.title.includes(searchInput) ||
-          i.category.includes(searchInput) ||
-          i.description.includes(searchInput)
+          i.title.toLowerCase().includes(searchInput) ||
+          i.category.toLowerCase().includes(searchInput) ||
+          i.description.toLowerCase().includes(searchInput)
       );
       setProducts(searchProducts);
     } else if (filters.length !== 0 && searchInput === "") {
@@ -51,7 +51,7 @@ export default function Home({ productsData, categoriesData }) {
   }
 
   function searchFunc(input) {
-    setSearchInput(input);
+    setSearchInput(input.toLowerCase());
   }
 
   return (
