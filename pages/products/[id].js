@@ -40,14 +40,19 @@ const Product = ({ product }) => {
 };
 export default Product;
 
+const getAllProducts = async () => {
+  return await fetch("https://fakestoreapi.com/products/").then((res) =>
+    res.json()
+  );
+};
+
 export async function getStaticPaths() {
+  const products = await getAllProducts();
+  const paths = products.map((product) => ({
+    params: { id: `${product.id}` },
+  }));
   return {
-    paths: [
-      { params: { id: "0" } },
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-    ],
+    paths: paths,
     fallback: true,
   };
 }
